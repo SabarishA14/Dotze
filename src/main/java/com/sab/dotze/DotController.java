@@ -15,7 +15,7 @@ public class DotController {
     private DotService service;
 
     @GetMapping("/home")
-    public static
+    public responsepage geti
 
 
 
