@@ -1,7 +1,8 @@
-package com.sab.dotze.Model;
+package com.sab.dotze.Model.Home;
 
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,15 +10,13 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
-public class HomePage {
-
-    private String title;
-    private String homeTitle;
+public class WhoAreWe {
+    @Id
+    private String heading;
     private String description;
-    private String trustedby;
-    private List<String> brands;
+    private List<String> coreValues;
 
 }
