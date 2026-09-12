@@ -20,5 +20,4 @@ public class HomePageResponse {
     private WhoAreWe whoAreWe;
     private WhyDotze whyDotze;
 
-
 }

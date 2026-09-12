@@ -1,6 +1,7 @@
 package com.sab.dotze;
 
 
+import com.sab.dotze.Model.Home.Dto.HomePageResponse;
 import com.sab.dotze.Service.DotService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,9 @@ public class DotController {
     private DotService service;
 
     @GetMapping("/home")
-    public responsepage geti
+    public HomePageResponse getHomePage(){
+        return service.getHome();
+    }
 
 
 
