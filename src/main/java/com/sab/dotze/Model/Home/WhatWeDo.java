@@ -17,8 +17,8 @@ import java.util.List;
 public class WhatWeDo {
 
     @Id
-    private String title;
+    private int id;
+    private String heading;
     private String description;
-    private List<String> whatWeDo;
 
 }

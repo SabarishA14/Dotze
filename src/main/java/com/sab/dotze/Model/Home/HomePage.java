@@ -19,7 +19,17 @@ public class HomePage {
     private String title;
     private String homeTitle;
     private String description;
-    private String trustedby;
+    private String trustedBy;
     private List<String> brands;
+
+    private String whatWeDo;
+    private String whatWeDoDesc;
+
+    private String whoAreWe;
+    private String whoAreWeDesc;
+
+    private String whyDotze;
+    private String brandsGrowth;
+
 
 }

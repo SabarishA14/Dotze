@@ -8,8 +8,7 @@ public class WhyDotze {
 
 
     @Id
-    private String whyDotze;
-    private String brandsGrowth;
-    private List<String> points;
-
+    private int id;
+    private String heading;
+    private String description;
 }

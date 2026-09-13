@@ -14,9 +14,9 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 public class WhoAreWe {
+
     @Id
+    private int id;
     private String heading;
     private String description;
-    private List<String> coreValues;
-
 }
