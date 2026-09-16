@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface WhoWeAreRepo extends JpaRepository<WhoAreWe,Integer> {
+public interface WhoAreWeRepo extends JpaRepository<WhoAreWe,Integer> {
 }

@@ -2,6 +2,7 @@ package com.sab.dotze;
 
 
 import com.sab.dotze.Model.Home.Dto.HomePageResponse;
+import com.sab.dotze.Model.Home.HomePage;
 import com.sab.dotze.Service.DotService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,10 +19,15 @@ public class DotController {
         return service.getHome();
     }
 
-    @PostMapping("/home")
-    public void postHomePage()
+    @PatchMapping("/home")
+    public HomePage updateHomePage(@RequestBody HomePage homePage){
+        return service.updateHomePage(homePage);;
+    }
 
-    @PutMapping
+    @PutMapping("/what-we-do/{id}"){
+
+    }
+
 
 
 
