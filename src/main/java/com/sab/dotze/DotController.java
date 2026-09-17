@@ -3,12 +3,13 @@ package com.sab.dotze;
 
 import com.sab.dotze.Model.Home.Dto.HomePageResponse;
 import com.sab.dotze.Model.Home.HomePage;
+import com.sab.dotze.Model.Home.WhatWeDo;
 import com.sab.dotze.Service.DotService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api"
 public class DotController {
 
     @Autowired
@@ -21,12 +22,18 @@ public class DotController {
 
     @PatchMapping("/home")
     public HomePage updateHomePage(@RequestBody HomePage homePage){
-        return service.updateHomePage(homePage);;
+        return service.updateHomePage(homePage);
     }
 
-    @PutMapping("/what-we-do/{id}"){
-
+    @PutMapping("/what-we-do/{id}")
+    public WhatWeDo updateWhatWeDo(@RequestBody WhatWeDo whatWeDo){
+        return service.updateWhatWeDo(whatWeDo);
     }
+
+
+
+    @PutMapping("/who-are-we/{id}")
+
 
 
 

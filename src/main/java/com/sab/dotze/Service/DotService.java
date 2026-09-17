@@ -41,7 +41,9 @@ public class DotService {
         return homePageRepo.save(homePage);
     }
 
-    public void updateWhatWeDo(WhatWeDo whatWeDo){
-        whatWeDoRepo.save(whatWeDo);
+    public WhatWeDo updateWhatWeDo(WhatWeDo whatWeDo){
+        return whatWeDoRepo.save(whatWeDo);
     }
+
+
 }
