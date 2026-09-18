@@ -43,6 +43,7 @@ public class DotService {
 
     public WhatWeDo updateWhatWeDo(WhatWeDo whatWeDo){
         return whatWeDoRepo.save(whatWeDo);
+
     }
 
 
