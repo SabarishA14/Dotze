@@ -4,12 +4,13 @@ package com.sab.dotze;
 import com.sab.dotze.Model.Home.Dto.HomePageResponse;
 import com.sab.dotze.Model.Home.HomePage;
 import com.sab.dotze.Model.Home.WhatWeDo;
+import com.sab.dotze.Model.Home.WhoAreWe;
 import com.sab.dotze.Service.DotService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api"
+@RequestMapping("/api")
 public class DotController {
 
     @Autowired
@@ -33,6 +34,13 @@ public class DotController {
 
 
     @PutMapping("/who-are-we/{id}")
+    public WhoAreWe updateWhoAreWe(
+            @PathVariable int id,
+            @RequestBody WhoAreWe whoAreWe){
+        return service.updateWhoAreWe(whoAreWe,id);
+    }
+
+    @PutMapping
 
 
 

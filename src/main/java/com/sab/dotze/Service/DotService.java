@@ -38,13 +38,71 @@ public class DotService {
     }
 
     public HomePage updateHomePage(HomePage homePage) {
-        return homePageRepo.save(homePage);
+        HomePage existingData = homePageRepo.findById(homePage.getTitle())
+                .orElseThrow(() -> new RuntimeException("Home page data not found"));
+
+        if (homePage.getHomeTitle() != null) {
+            existingData.setHomeTitle(homePage.getHomeTitle());
+        }
+
+        if (homePage.getDescription() != null) {
+            existingData.setDescription(homePage.getDescription());
+        }
+
+        if (homePage.getTrustedBy() != null) {
+            existingData.setTrustedBy(homePage.getTrustedBy());
+        }
+
+        if (homePage.getBrands() != null) {
+            existingData.setBrands(homePage.getBrands());
+        }
+
+        if (homePage.getWhatWeDo() != null) {
+            existingData.setWhatWeDo(homePage.getWhatWeDo());
+        }
+
+        if (homePage.getWhatWeDoDesc() != null) {
+            existingData.setWhatWeDoDesc(homePage.getWhatWeDoDesc());
+        }
+
+        if (homePage.getWhoAreWe() != null) {
+            existingData.setWhoAreWe(homePage.getWhoAreWe());
+        }
+
+        if (homePage.getWhoAreWeDesc() != null) {
+            existingData.setWhoAreWeDesc(homePage.getWhoAreWeDesc());
+        }
+
+        if (homePage.getWhyDotze() != null) {
+            existingData.setWhyDotze(homePage.getWhyDotze());
+        }
+
+        if (homePage.getBrandsGrowth() != null) {
+            existingData.setBrandsGrowth(homePage.getBrandsGrowth());
+        }
+
+        return homePageRepo.save(existingData);
     }
 
     public WhatWeDo updateWhatWeDo(WhatWeDo whatWeDo){
-        return whatWeDoRepo.save(whatWeDo);
+
 
     }
 
 
+    public WhoAreWe updateWhoAreWe(WhoAreWe whoAreWe,int id) {
+        WhoAreWe existingData = whoAreWeRepo.findById(id)
+                .orElseThrow(() -> new RuntimeException("Data not found"));
+
+        if (whoAreWe.getHeading() != null) {
+            existingData.setHeading(whoAreWe.getHeading());
+        }
+
+        if (whoAreWe.getDescription() != null) {
+            existingData.setDescription(whoAreWe.getDescription());
+        }
+
+        return whoAreWeRepo.save(existingData);
+
+    }
 }
