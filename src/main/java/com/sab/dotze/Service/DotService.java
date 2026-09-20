@@ -84,8 +84,19 @@ public class DotService {
         return homePageRepo.save(existingData);
     }
 
-    public WhatWeDo updateWhatWeDo(WhatWeDo whatWeDo){
+    public WhatWeDo updateWhatWeDo(int id,WhatWeDo whatWeDo){
+        WhatWeDo existingData = whatWeDoRepo.findById(id)
+                .orElseThrow(() -> new RuntimeException("Data not found"));
 
+        if (whatWeDo.getHeading() != null) {
+            existingData.setHeading(whatWeDo.getHeading());
+        }
+
+        if (whatWeDo.getDescription() != null) {
+            existingData.setDescription(whatWeDo.getDescription());
+        }
+
+        return whatWeDoRepo.save(existingData);
 
     }
 
@@ -104,5 +115,20 @@ public class DotService {
 
         return whoAreWeRepo.save(existingData);
 
+    }
+
+    public WhyDotze updateWhyDotze(int id, WhyDotze whyDotze) {
+        WhyDotze existingData = whyDotzeRepo.findById(id)
+                .orElseThrow(() -> new RuntimeException("Data not found"));
+
+        if (whyDotze.getHeading() != null) {
+            existingData.setHeading(whyDotze.getHeading());
+        }
+
+        if (whyDotze.getDescription() != null) {
+            existingData.setDescription(whyDotze.getDescription());
+        }
+
+        return whyDotzeRepo.save(existingData);
     }
 }
