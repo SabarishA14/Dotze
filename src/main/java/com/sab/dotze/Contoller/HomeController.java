@@ -1,4 +1,4 @@
-package com.sab.dotze;
+package com.sab.dotze.Contoller;
 
 
 import com.sab.dotze.Model.Home.Dto.HomePageResponse;
@@ -6,16 +6,16 @@ import com.sab.dotze.Model.Home.HomePage;
 import com.sab.dotze.Model.Home.WhatWeDo;
 import com.sab.dotze.Model.Home.WhoAreWe;
 import com.sab.dotze.Model.Home.WhyDotze;
-import com.sab.dotze.Service.DotService;
+import com.sab.dotze.Service.HomeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
-public class DotController {
+public class HomeController {
 
     @Autowired
-    private DotService service;
+    private HomeService service;
 
     @GetMapping("/home")
     public HomePageResponse getHomePage(){
@@ -27,24 +27,40 @@ public class DotController {
         return service.updateHomePage(homePage);
     }
 
-    @PutMapping("/what-we-do/{id}")
+    @PatchMapping("/what-we-do/{id}")
     public WhatWeDo updateWhatWeDo(@PathVariable int id,@RequestBody WhatWeDo whatWeDo){
         return service.updateWhatWeDo(id,whatWeDo);
     }
 
-    @PutMapping("/who-are-we/{id}")
+    @PatchMapping("/who-are-we/{id}")
     public WhoAreWe updateWhoAreWe(
             @PathVariable int id,
             @RequestBody WhoAreWe whoAreWe){
         return service.updateWhoAreWe(whoAreWe,id);
     }
 
-    @PutMapping("/why-dotze/{id}")
+    @PatchMapping("/why-dotze/{id}")
     public WhyDotze updateWhyDotze(
             @PathVariable int id,
             @RequestBody WhyDotze whyDotze){
         return service.updateWhyDotze(id,whyDotze);
     }
+
+    @PostMapping("/what-we-do")
+    public WhatWeDo createWhatWeDo(@RequestBody WhatWeDo whatWeDo){
+        return service.createWhatWeDo(whatWeDo);
+    }
+
+    @PostMapping("/who-are-we")
+    public WhoAreWe createWhoAreWe(@RequestBody WhoAreWe whoAreWe){
+        return service.createWhoAreWe(whoAreWe);
+    }
+
+    @PostMapping("why-dotze")
+    public WhyDotze createWhyDotze(@RequestBody WhyDotze whyDotze){
+        return service.createWhyDotze(whyDotze);
+    }
+
 
 
 

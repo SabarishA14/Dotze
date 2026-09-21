@@ -1,4 +1,4 @@
-package com.sab.dotze.Model.Home;
+package com.sab.dotze.Model.About;
 
 
 import jakarta.persistence.Entity;
@@ -7,22 +7,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Generated;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
-
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class WhatWeDo {
+public class AboutPage {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private int id;
     private String heading;
-    private String description;
-
+    private String Description;
 }

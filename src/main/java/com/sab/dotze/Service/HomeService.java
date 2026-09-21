@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class DotService {
+public class HomeService {
 
     @Autowired
     private HomePageRepo homePageRepo;
@@ -130,5 +130,17 @@ public class DotService {
         }
 
         return whyDotzeRepo.save(existingData);
+    }
+
+    public WhatWeDo createWhatWeDo(WhatWeDo whatWeDo) {
+        return whatWeDoRepo.save(whatWeDo);
+    }
+
+    public WhoAreWe createWhoAreWe(WhoAreWe whoAreWe) {
+        return whoAreWeRepo.save(whoAreWe);
+    }
+
+    public WhyDotze createWhyDotze(WhyDotze whyDotze) {
+        return whyDotzeRepo.save(whyDotze);
     }
 }
