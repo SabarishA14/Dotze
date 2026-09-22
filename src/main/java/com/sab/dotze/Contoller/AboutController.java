@@ -6,6 +6,8 @@ import com.sab.dotze.Service.AboutService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api")
 public class AboutController {
@@ -14,7 +16,7 @@ public class AboutController {
     private AboutService service;
 
     @GetMapping("/about")
-    public AboutPage getAbout(){
+    public List<AboutPage> getAbout(){
         return service.getAbout();
     }
 

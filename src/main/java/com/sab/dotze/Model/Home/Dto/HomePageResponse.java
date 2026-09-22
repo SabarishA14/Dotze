@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 
 @Data
 @AllArgsConstructor
@@ -16,8 +18,8 @@ import lombok.NoArgsConstructor;
 public class HomePageResponse {
 
     private HomePage homePage;
-    private WhatWeDo whatWeDo;
-    private WhoAreWe whoAreWe;
-    private WhyDotze whyDotze;
+    private List<WhatWeDo> whatWeDo;
+    private List<WhoAreWe> whoAreWe;
+    private List<WhyDotze> whyDotze;
 
 }

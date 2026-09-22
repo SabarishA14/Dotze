@@ -12,6 +12,8 @@ import com.sab.dotze.Repo.HomeRepo.WhyDotzeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class HomeService {
 
@@ -30,9 +32,9 @@ public class HomeService {
 
     public HomePageResponse getHome() {
         HomePage homePage = homePageRepo.findAll().get(0);
-        WhatWeDo whatWeDo = whatWeDoRepo.findAll().get(0);
-        WhoAreWe whoAreWe = whoAreWeRepo.findAll().get(0);
-        WhyDotze whyDotze = whyDotzeRepo.findAll().get(0);
+        List<WhatWeDo> whatWeDo = whatWeDoRepo.findAll();
+        List<WhoAreWe> whoAreWe = whoAreWeRepo.findAll();
+        List<WhyDotze> whyDotze = whyDotzeRepo.findAll();
 
         return new HomePageResponse(homePage,whatWeDo,whoAreWe,whyDotze);
     }

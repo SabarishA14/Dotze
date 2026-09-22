@@ -7,6 +7,8 @@ import com.sab.dotze.Repo.AboutPage.AboutRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AboutService {
 
@@ -14,8 +16,8 @@ public class AboutService {
     private AboutRepo aboutRepo;
 
 
-    public AboutPage getAbout() {
-        return aboutRepo.findAll().get(0);
+    public List<AboutPage> getAbout() {
+        return aboutRepo.findAll();
     }
 
 
@@ -38,4 +40,5 @@ public class AboutService {
     public AboutPage createAbout(AboutPage aboutPage) {
         return aboutRepo.save(aboutPage);
     }
+
 }
