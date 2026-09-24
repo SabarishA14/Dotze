@@ -16,4 +16,6 @@ public class Videos {
 
     @Id
     private int id;
+    @Lob
+    private byte[] videos;
 }

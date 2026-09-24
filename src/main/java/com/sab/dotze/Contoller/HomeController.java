@@ -4,7 +4,7 @@ package com.sab.dotze.Contoller;
 import com.sab.dotze.Model.Home.Dto.HomePageResponse;
 import com.sab.dotze.Model.Home.HomePage;
 import com.sab.dotze.Model.Home.WhatWeDo;
-import com.sab.dotze.Model.Home.WhoAreWe;
+import com.sab.dotze.Model.About.WhoAreWe;
 import com.sab.dotze.Model.Home.WhyDotze;
 import com.sab.dotze.Service.HomeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,12 +32,7 @@ public class HomeController {
         return service.updateWhatWeDo(id,whatWeDo);
     }
 
-    @PatchMapping("/who-are-we/{id}")
-    public WhoAreWe updateWhoAreWe(
-            @PathVariable int id,
-            @RequestBody WhoAreWe whoAreWe){
-        return service.updateWhoAreWe(whoAreWe,id);
-    }
+
 
     @PatchMapping("/why-dotze/{id}")
     public WhyDotze updateWhyDotze(
@@ -51,10 +46,6 @@ public class HomeController {
         return service.createWhatWeDo(whatWeDo);
     }
 
-    @PostMapping("/who-are-we")
-    public WhoAreWe createWhoAreWe(@RequestBody WhoAreWe whoAreWe){
-        return service.createWhoAreWe(whoAreWe);
-    }
 
     @PostMapping("why-dotze")
     public WhyDotze createWhyDotze(@RequestBody WhyDotze whyDotze){

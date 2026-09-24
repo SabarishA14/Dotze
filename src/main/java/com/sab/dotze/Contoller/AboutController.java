@@ -2,6 +2,8 @@ package com.sab.dotze.Contoller;
 
 
 import com.sab.dotze.Model.About.AboutPage;
+import com.sab.dotze.Model.About.WhoAreWe;
+import com.sab.dotze.Model.About.dto.AboutPageResponse;
 import com.sab.dotze.Service.AboutService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +18,7 @@ public class AboutController {
     private AboutService service;
 
     @GetMapping("/about")
-    public List<AboutPage> getAbout(){
+    public AboutPageResponse getAbout(){
         return service.getAbout();
     }
 
@@ -30,6 +32,18 @@ public class AboutController {
     @PostMapping("/about")
     public AboutPage createAbout(@RequestBody AboutPage aboutPage){
         return service.createAbout(aboutPage);
+    }
+
+    @PostMapping("/who-are-we")
+    public WhoAreWe createWhoAreWe(@RequestBody WhoAreWe whoAreWe){
+        return service.createWhoAreWe(whoAreWe);
+    }
+
+    @PatchMapping("/who-are-we/{id}")
+    public WhoAreWe updateWhoAreWe(
+            @PathVariable int id,
+            @RequestBody WhoAreWe whoAreWe){
+        return service.updateWhoAreWe(whoAreWe,id);
     }
 
 }

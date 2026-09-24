@@ -22,4 +22,5 @@ public class WhyDotze {
     private int id;
     private String heading;
     private String description;
+
 }

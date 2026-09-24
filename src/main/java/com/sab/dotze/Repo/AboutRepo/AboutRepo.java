@@ -1,4 +1,4 @@
-package com.sab.dotze.Repo.AboutPage;
+package com.sab.dotze.Repo.AboutRepo;
 
 
 import com.sab.dotze.Model.About.AboutPage;

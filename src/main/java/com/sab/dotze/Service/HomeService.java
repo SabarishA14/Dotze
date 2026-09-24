@@ -3,11 +3,10 @@ package com.sab.dotze.Service;
 import com.sab.dotze.Model.Home.Dto.HomePageResponse;
 import com.sab.dotze.Model.Home.HomePage;
 import com.sab.dotze.Model.Home.WhatWeDo;
-import com.sab.dotze.Model.Home.WhoAreWe;
 import com.sab.dotze.Model.Home.WhyDotze;
 import com.sab.dotze.Repo.HomeRepo.HomePageRepo;
 import com.sab.dotze.Repo.HomeRepo.WhatWeDoRepo;
-import com.sab.dotze.Repo.HomeRepo.WhoAreWeRepo;
+import com.sab.dotze.Repo.AboutRepo.WhoAreWeRepo;
 import com.sab.dotze.Repo.HomeRepo.WhyDotzeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,10 +32,9 @@ public class HomeService {
     public HomePageResponse getHome() {
         HomePage homePage = homePageRepo.findAll().get(0);
         List<WhatWeDo> whatWeDo = whatWeDoRepo.findAll();
-        List<WhoAreWe> whoAreWe = whoAreWeRepo.findAll();
         List<WhyDotze> whyDotze = whyDotzeRepo.findAll();
 
-        return new HomePageResponse(homePage,whatWeDo,whoAreWe,whyDotze);
+        return new HomePageResponse(homePage,whatWeDo,whyDotze);
     }
 
     public HomePage updateHomePage(HomePage homePage) {
@@ -103,21 +101,7 @@ public class HomeService {
     }
 
 
-    public WhoAreWe updateWhoAreWe(WhoAreWe whoAreWe,int id) {
-        WhoAreWe existingData = whoAreWeRepo.findById(id)
-                .orElseThrow(() -> new RuntimeException("Data not found"));
 
-        if (whoAreWe.getHeading() != null) {
-            existingData.setHeading(whoAreWe.getHeading());
-        }
-
-        if (whoAreWe.getDescription() != null) {
-            existingData.setDescription(whoAreWe.getDescription());
-        }
-
-        return whoAreWeRepo.save(existingData);
-
-    }
 
     public WhyDotze updateWhyDotze(int id, WhyDotze whyDotze) {
         WhyDotze existingData = whyDotzeRepo.findById(id)
@@ -138,9 +122,6 @@ public class HomeService {
         return whatWeDoRepo.save(whatWeDo);
     }
 
-    public WhoAreWe createWhoAreWe(WhoAreWe whoAreWe) {
-        return whoAreWeRepo.save(whoAreWe);
-    }
 
     public WhyDotze createWhyDotze(WhyDotze whyDotze) {
         return whyDotzeRepo.save(whyDotze);

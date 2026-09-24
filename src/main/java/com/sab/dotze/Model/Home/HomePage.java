@@ -3,6 +3,7 @@ package com.sab.dotze.Model.Home;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,12 +22,11 @@ public class HomePage {
     private String description;
     private String trustedBy;
     private List<String> brands;
+    @Lob
+    private byte[] Photos;
 
     private String whatWeDo;
     private String whatWeDoDesc;
-
-    private String whoAreWe;
-    private String whoAreWeDesc;
 
     private String whyDotze;
     private String brandsGrowth;
